@@ -1,0 +1,24 @@
+#%RAML 1.0
+version: 1.0.0
+title: Deltadatabase
+baseUri: http://localhost:8081/api
+/deltaflights:
+  get:
+    responses:
+      200:
+        description: delta all flights here we get.........
+        body:
+          application/json:
+            example: !include examples/deltaflights.json
+  /{destination}:
+    get:
+      queryParameters:
+        destination:
+          minLength: 3
+          maxLength: 3
+      responses:
+       200:
+        description: delta all flights here we get.........
+        body:
+           application/json:
+    
